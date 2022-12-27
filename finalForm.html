@@ -40,7 +40,7 @@
             <div class="card justify-content-center" style="background-color: transparent; border: none;">
                 <div class="container" style="background-color: transparent;">
                     <div class="card-body" style="background:var(--background--form);">
-                        <form id="form" action="/signupHandle" method="post" style="background-color: transparent;">
+                        <form id="form" action="/signupHandle" method="post" onsubmit="window.location='thanks.html';return false;" style="background-color: transparent;">
                             <div class="form-group"><!--action="/signupHandle"  method="post"-->
                                 <div class="row">
                                     <div class="col-lg-5">
@@ -69,7 +69,7 @@
                                     <div class="col-lg-5">
                                         <label for="cgpa" style="margin-top:1rem;">CGPA</label>
                                         <input type="number" min="0" max="4" step="0.01" class="form-control" id="cgpa"
-                                            name="cgpa" oninput=checkCGPA() placeholder="Enter Your CGPA" required>
+                                            name="cgpa" placeholder="Enter Your CGPA" required>
                                     </div>
                                 </div>
 
@@ -135,7 +135,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="itc" style="margin-top:1rem;">Intro to Computing</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="itcNum" name="itc"
+                                    <input type="number" min="0" max="100"  class="form-control" id="itcNum" name="itc"
                                         placeholder="Marks out of 100" required>
                                 </div>
 
@@ -144,14 +144,14 @@
                                 <div class="col-lg-5">
                                     <label for="pf" style="margin-top:1rem; font-size: smaller;">Programming
                                         Fundamentals</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="pfNum" name="pf"
+                                    <input type="number" min="0" max="100"  class="form-control" id="pfNum" name="pf"
                                         placeholder="Marks out of 100" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="pfLab" style="margin-top:1rem;">PF Lab</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="pfLabNum"
+                                    <input type="number" min="0" max="100"   class="form-control" id="pfLabNum"
                                         name="pfLab" placeholder="Marks out of 100" required>
                                 </div>
 
@@ -160,7 +160,7 @@
                                 <div class="col-lg-5">
                                     <label for="oop" style="margin-top:1rem; font-size: smaller;">Object Oriented
                                         Prog</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="oopNum" name="oop"
+                                    <input type="number" min="0" max="100"  class="form-control" id="oopNum" name="oop"
                                         placeholder="Marks out of 100" required>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="oopLab" style="margin-top:1rem;">OOP Lab</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="oopLabNum"
+                                    <input type="number" min="0" max="100"   class="form-control" id="oopLabNum"
                                         name="oopLab" placeholder="Marks out of 100" required>
                                 </div>
 
@@ -177,14 +177,14 @@
                                 <div class="col-lg-5">
                                     <label for="dsa" style="margin-top:1rem; font-size: smaller;">Data Structures
                                         (DSA)</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="dsaNum" name="dsa"
+                                    <input type="number" min="0" max="100"  class="form-control" id="dsaNum" name="dsa"
                                         placeholder="Marks out of 100" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="dsaLAB" style="margin-top:1rem;">DSA Lab</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="dsaLabNum"
+                                    <input type="number" min="0" max="100"  class="form-control" id="dsaLabNum"
                                         name="dsaLab" placeholder="Marks out of 100" required>
                                 </div>
 
@@ -192,7 +192,7 @@
 
                                 <div class="col-lg-5">
                                     <label for="algo" style="margin-top:1rem;">Analysis of Algorithms</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="algoNum" name="algo"
+                                    <input type="number" min="0" max="100"   class="form-control" id="algoNum" name="algo"
                                         placeholder="Marks out of 100" required>
                                 </div>
                             </div>
@@ -200,7 +200,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="db" style="margin-top:1rem;">DataBase Systems</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="dbNum" name="db"
+                                    <input type="number" min="0" max="100"  class="form-control" id="dbNum" name="db"
                                         placeholder="Marks out of 100" required>
                                 </div>
 
@@ -208,7 +208,7 @@
 
                                 <div class="col-lg-5">
                                     <label for="dbLab" style="margin-top:1rem;">DBS Lab</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="dbLab" name="dbLab"
+                                    <input type="number" min="0" max="100"   class="form-control" id="dbLab" name="dbLab"
                                         placeholder="Marks out of 100" required>
                                 </div>
                             </div>
@@ -216,7 +216,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="web" style="margin-top:1rem;">Web Engineering</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="webNum" name="web"
+                                    <input type="number" min="0" max="100"   class="form-control" id="webNum" name="web"
                                         placeholder="Marks out of 100" required>
                                 </div>
 
@@ -224,7 +224,7 @@
 
                                 <div class="col-lg-5">
                                     <label for="webLab" style="margin-top:1rem;">WEB Lab</label>
-                                    <input type="number" min="0" max="100" class="form-control" id="webLab"
+                                    <input type="number" min="0" max="100"   class="form-control" id="webLab"
                                         name="webLab" placeholder="Marks out of 100" required>
                                 </div>
                             </div>
@@ -234,7 +234,7 @@
                                 <div class="col-lg-2">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male"
-                                            value="male" />
+                                            value="male" required />
                                         <label class="form-check-label" for="male">Male</label>
                                     </div>
                                 </div>
@@ -579,23 +579,6 @@
             newSkillLevel.value = "0";
 
 
-        }
-        function checkCGPA() {
-            // Get the value of the CGPA input field
-            var cgpa = document.getElementById("cgpa").value;
-
-
-            // Check if the value is within the range of 1 to 4
-            if (cgpa >= 0 && cgpa <= 4) {
-                // If the value is within the range, remove any error messages
-                document.getElementById("submit").disabled = false;
-
-            } else {
-                // If the value is not within the range, display an error message
-                alert("GPA Value is not in range!")
-                document.getElementById("submit").disabled = true;
-
-            }
         }
     </script>
 </body>
