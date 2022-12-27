@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Use a Google font for the heading */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+    /* Some basic styling for the form */
+    form {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Style the labels */
+    label {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* Style the input fields */
+    input[type=text], input[type=email], input[type=password] {
+      width: 60%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    /* Style the select menu */
+    select {
+      width: 60%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      appearance: none; /* Remove the default dropdown arrow in Chrome */
+      -webkit-appearance: none; /* Remove the default dropdown arrow in Safari */
+      background-image: url('data:image/svg+xml;utf8,<svg fill="#444" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Add a custom dropdown arrow */
+      background-position: right 15px top 50%; /* Position the dropdown arrow */
+      background-repeat: no-repeat; /* Do not repeat the custom arrow */
+    }
+
+    /* Style the skill list */
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /* Style the list items */
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    /* Style the skill text */
+    li p {
+      margin: 0;
+      font-size: 16px;
+      flex-grow: 1;
+    }
+
+    /* Style the proficiency level select menu */
+    li select {
+      width: 80px;
+      margin-left: 10px;
+    }
+
+    /* Style the remove button */
+    li button {
+      background-color: #f44336; /* Red */
+      color: white;
+      padding: 5px 10px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+  <form>
+    <h1>Registration Form</h1>
+    <!-- Add a text field for the user's name -->
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" placeholder="Enter your name"><br>
+    <!-- Add a text field for the user's email address -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" placeholder="Enter your email"><br>
+    <!-- Add a password field for the user's password -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" placeholder="Enter your password"><br>
+    <!-- Add a select menu for the number of semesters -->
+    <label for="semesters">Number of semesters:</label><br>
+    <select id="semesters">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select><br>
+    <!-- Add a list to display the skills -->
+    <h2>Skills</h2>
+    <ul id="skillList"></ul>
+    <!-- Add a text field for the user to enter a new skill -->
+    <input type="text" id="newSkill" placeholder="Enter a new skill">
+    <!-- Add a select menu for the proficiency level of the new skill -->
+    <select id="newSkillLevel">
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+    <!-- Add a button to add the new skill to the list -->
+    <button type="button" onclick="addSkill()">Add Skill</button>
+    <!-- Add a submit button to submit the form -->
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    // Get a reference to the skill list, the new skill text field, and the new skill level select menu
+    var skillList = document.getElementById("skillList");
+    var newSkill = document.getElementById("newSkill");
+    var newSkillLevel = document.getElementById("newSkillLevel");
+
+    // Define a function to add a new skill to the list
+    function addSkill() {
+      // Get the value of the new skill text field and the new skill level select menu
+      var skill = newSkill.value;
+      var skillLevel = newSkillLevel.value;
+      // Make sure the
+      // Make sure the skill and skill level are not empty
+      if (skill.trim() === "" || skillLevel.trim() === "") {
+        return;
+      }
+
+      // Create a new list item to hold the skill and proficiency level
+      var li = document.createElement("li");
+      // Create a paragraph element to hold the skill
+      var p = document.createElement("p");
+      p.textContent = skill;
+      // Create a select menu element to hold the proficiency level
+      var select = document.createElement("select");
+      select.value = skillLevel;
+      // Add the options to the select menu
+      var option1 = document.createElement("option");
+      option1.value = "beginner";
+      option1.textContent = "Beginner";
+      select.appendChild(option1);
+      var option2 = document.createElement("option");
+      option2.value = "intermediate";
+      option2.textContent = "Intermediate";
+      select.appendChild(option2);
+      var option3 = document.createElement("option");
+      option3.value = "advanced";
+      option3.textContent = "Advanced";
+      select.appendChild(option3);
+      // Create a button to remove the skill from the list
+      var button = document.createElement("button");
+      button.textContent = "Remove";
+      // Add an event listener to the remove button
+      button.addEventListener("click", function() {
+        // Remove the list item from the skill list
+        skillList.removeChild(li);
+      });
+
+      // Append the skill, proficiency level, and remove button to the list item
+      li.appendChild(p);
+      li.appendChild(select);
+      li.appendChild(button);
+      // Append the list item to the skill list
+      skillList.appendChild(li);
+      // Clear the new skill text field and the new skill level select menu
+      newSkill.value = "";
+      newSkillLevel.value = "beginner";
+    }
+  </script>
+</body>
+</html>

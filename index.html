@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script>
+    'use strict';
+  $(document).ready(function() {
+    var $wrap = $(".wrapper"),
+        pages = $(".page").length,
+        scrolling = false,
+        currentPage = 1,
+        $navPanel = $(".nav-panel"),
+        $scrollBtn = $(".scroll-btn"),
+        $navBtn = $(".nav-btn");
+  
+    /*****************************
+    ***** NAVIGATE FUNCTIONS *****
+    *****************************/
+    function manageClasses() {
+      $wrap.removeClass(function (index, css) {
+        return (css.match (/(^|\s)active-page\S+/g) || []).join(' ');
+      });
+      $wrap.addClass("active-page" + currentPage);
+      $navBtn.removeClass("active");
+      $(".nav-btn.nav-page" + currentPage).addClass("active");
+      $navPanel.addClass("invisible");
+      scrolling = true;
+      setTimeout(function() {
+        $navPanel.removeClass("invisible");
+        scrolling = false;
+      }, 1000);
+    }
+    function navigateUp() {
+      if (currentPage > 1) {
+        currentPage--;
+        if (Modernizr.csstransforms) {
+          manageClasses();
+        } else {
+          $wrap.animate({"top": "-" + ( (currentPage - 1) * 100) + "%"}, 1000);
+        }
+      }
+    }
+  
+    function navigateDown() {
+      if (currentPage < pages) {
+        currentPage++;
+        if (Modernizr.csstransforms) {
+          manageClasses();
+        } else {
+          $wrap.animate({"top": "-" + ( (currentPage - 1) * 100) + "%"}, 1000);
+        }
+      }
+    }
+  
+    /*********************
+    ***** MOUSEWHEEL *****
+    *********************/
+    $(document).on("mousewheel DOMMouseScroll", function(e) {
+      if (!scrolling) {
+        if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+          navigateUp();
+        } else { 
+          navigateDown();
+        }
+      }
+    });
+  
+    /**************************
+    ***** RIGHT NAVIGATION ****
+    **************************/
+  
+    /* NAV UP/DOWN BTN PAGE NAVIGATION */
+    $(document).on("click", ".scroll-btn", function() {
+      if ($(this).hasClass("up")) {
+        navigateUp();
+      } else {
+        navigateDown();
+      }
+    });
+  
+    /* NAV CIRCLE DIRECT PAGE BTN */
+    $(document).on("click", ".nav-btn:not(.active)", function() {
+      if (!scrolling) {
+        var target = $(this).attr("data-target");
+        if (Modernizr.csstransforms) {
+          $wrap.removeClass(function (index, css) {
+            return (css.match (/(^|\s)active-page\S+/g) || []).join(' ');
+          });
+          $wrap.addClass("active-page" + target);
+          $navBtn.removeClass("active");
+          $(this).addClass("active");
+          $navPanel.addClass("invisible");
+          currentPage = target;
+          scrolling = true;
+          setTimeout(function() {
+            $navPanel.removeClass("invisible");
+            scrolling = false; 
+          }, 1000);
+        } else {
+          $wrap.animate({"top": "-" + ( (target - 1) * 100) + "%"}, 1000);
+        }
+      }
+    });
+  
+  });
+  </script>
+  
+  <title>Viaduct</title>
+</head>
+<body>
+  <div class="wrapper active-page1">
+    <div class="page page1">
+      <h1   style="font-family: 'Amita'; color: #5d41e8;">Viaduct</h1>
+      <h3>Scroll down to start filling the form.</h3>
+    </div>
+    <div class="page page2">
+      <h2>This data will be used in FYP to train Machine Learning models, so it's requested to fill correct data.</h2>
+    </div>
+    <div class="page page3">
+      <h2>Fill All Fields, and add Relevant skills/Projects/TAships as much as you want.</h2>
+    </div>
+    <div class="page page4">
+      <h2>5 of you who will submit will get a physical card same as their Viaduct cards.</h2>
+      <p class="check-out">Go To<a href="finalForm.html" target="_blank">Form</a></p>
+    </div>
+  </div>
+  <div class="nav-panel">
+    <div class="scroll-btn up"></div>
+    <div class="scroll-btn down"></div>
+    <nav>
+      <ul>
+        <li data-target="1" class="nav-btn nav-page1 active"></li>
+        <li data-target="2" class="nav-btn nav-page2"></li>
+        <li data-target="3" class="nav-btn nav-page3"></li>
+        <li data-target="4" class="nav-btn nav-page4"></li>
+      </ul>
+    </nav>
+  </div>
+</body>
+</html>

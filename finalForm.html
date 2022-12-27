@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viaduct data Collection</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body style="background-color: #fadbde;">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+
+            --background--button: linear-gradient(135deg, #ec6c0a, #f5421a);
+            --background--button1: linear-gradient(135deg, #1c8ae3, #52eecc);
+            --background--screen: url(pexels-scott-webb-1022923.jpg);
+            --background--form: transparent;
+        }
+    </style>
+    <div class="container-fluid" style="background:var(--background--screen); background-size: contain;">
+        <h1 class="text-center mb-lg-1" style="font-family: 'Amita'; font-size: 50px; color: #5d41e8;">Viaduct</h1>
+        <h3 class="text-center mb-2">Data Collection Drive</h3>
+        <div class="d-flex min-vh-100 justify-content-center" style="background-color: transparent; border: none;">
+            <div class="card justify-content-center" style="background-color: transparent; border: none;">
+                <div class="container" style="background-color: transparent;">
+                    <div class="card-body" style="background:var(--background--form);">
+                        <form id="form" action="/signupHandle" method="post" style="background-color: transparent;">
+                            <div class="form-group"><!--action="/signupHandle"  method="post"-->
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <label for="name" style="margin-top:1rem;">Full Name</label>
+                                        <input type="text" class="form-control" id="name" name="nm"
+                                            placeholder="Enter Your Name" required>
+                                    </div>
+
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-5">
+                                        <label for="uName" style="margin-top:1rem;">Roll Number</label>
+                                        <input type="text" class="form-control" id="rollNo" name="rn"
+                                            placeholder="Enter Roll Number" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <label for="email" style="margin-top:1rem;">Email</label>
+                                        <input type="email" class="form-control" id="email" name="em"
+                                            placeholder="Enter Your Email">
+                                    </div>
+
+                                    <div class="col-lg-1"></div>
+
+                                    <div class="col-lg-5">
+                                        <label for="cgpa" style="margin-top:1rem;">CGPA</label>
+                                        <input type="number" min="0" max="4" step="0.01" class="form-control" id="cgpa"
+                                            name="cgpa" oninput=checkCGPA() placeholder="Enter Your CGPA" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <label for="deg" style="margin-top:1rem;">Degree</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="RadioOptions" id="CS"
+                                                value="CS" required />
+                                            <label class="form-check-label" for="CS">CS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="RadioOptions" id="IT"
+                                                value="IT" />
+                                            <label class="form-check-label" for="IT">IT</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="RadioOptions" id="SE"
+                                                value="SE" />
+                                            <label class="form-check-label" for="SE">SE</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="RadioOptions" id="DS"
+                                                value="DS" />
+                                            <label class="form-check-label" for="DS">DS</label>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-5">
+                                        <label for="sem" style="margin-top:1rem;">Semester</label><br>
+                                        <select class="form-control" name="semester" id="semester" required>
+                                            <option value="">Select Semester</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label for="matric" style="margin-top:1rem;">Matric Percentage</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="matricNum"
+                                        name="matric" placeholder="Enter Your Matric %" required>
+                                </div>
+
+                                <div class="col-lg-1"></div>
+
+                                <div class="col-lg-5">
+                                    <label for="inter" style="margin-top:1rem;">Inter Percentage</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="interNum"
+                                        name="inter" placeholder="Enter Your Inter %" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label for="itc" style="margin-top:1rem;">Intro to Computing</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="itcNum" name="itc"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+
+                                <div class="col-lg-1"></div>
+
+                                <div class="col-lg-5">
+                                    <label for="pf" style="margin-top:1rem; font-size: smaller;">Programming
+                                        Fundamentals</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="pfNum" name="pf"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label for="pfLab" style="margin-top:1rem;">PF Lab</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="pfLabNum"
+                                        name="pfLab" placeholder="Marks out of 100" required>
+                                </div>
+
+                                <div class="col-lg-1"></div>
+
+                                <div class="col-lg-5">
+                                    <label for="oop" style="margin-top:1rem; font-size: smaller;">Object Oriented
+                                        Prog</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="oopNum" name="oop"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label for="oopLab" style="margin-top:1rem;">OOP Lab</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="oopLabNum"
+                                        name="oopLab" placeholder="Marks out of 100" required>
+                                </div>
+
+                                <div class="col-lg-1"></div>
+
+                                <div class="col-lg-5">
+                                    <label for="dsa" style="margin-top:1rem; font-size: smaller;">Data Structures
+                                        (DSA)</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="dsaNum" name="dsa"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label for="dsaLAB" style="margin-top:1rem;">DSA Lab</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="dsaLabNum"
+                                        name="dsaLab" placeholder="Marks out of 100" required>
+                                </div>
+
+                                <div class="col-lg-1"></div>
+
+                                <div class="col-lg-5">
+                                    <label for="algo" style="margin-top:1rem;">Analysis of Algorithms</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="algoNum" name="algo"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label for="db" style="margin-top:1rem;">DataBase Systems</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="dbNum" name="db"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+
+                                <div class="col-lg-1"></div>
+
+                                <div class="col-lg-5">
+                                    <label for="dbLab" style="margin-top:1rem;">DBS Lab</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="dbLab" name="dbLab"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label for="web" style="margin-top:1rem;">Web Engineering</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="webNum" name="web"
+                                        placeholder="Marks out of 100" required>
+                                </div>
+
+                                <div class="col-lg-1"></div>
+
+                                <div class="col-lg-5">
+                                    <label for="webLab" style="margin-top:1rem;">WEB Lab</label>
+                                    <input type="number" min="0" max="100" class="form-control" id="webLab"
+                                        name="webLab" placeholder="Marks out of 100" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label for="gender" style="margin-top:1rem;">Gender</label>
+                                <div class="col-lg-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male"
+                                            value="male" />
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="female" value="female" />
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="none"
+                                            value="Prefer Not to say" />
+                                        <label class="form-check-label" for="none">Prefer Not to say</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <ul id="skillList" class="list-group font-weight-bold text-bold"
+                                style="margin-bottom: 2rem;"></ul>
+                            <br>
+
+                            <div class="row">
+
+                                <div class="col-lg-5">
+                                    <!-- Add a text field for the user to enter a new skill -->
+                                    <input type="text" class="form-control" id="newSkill"
+                                        placeholder="Enter a new skill">
+                                    <!-- Add a select menu for the proficiency level of the new skill -->
+                                </div>
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-5">
+                                    <select class="form-control" id="newSkillLevel">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <button class="btn btn-block col-lg-11" type="button" id="add-skill-button" onclick=addSkill()
+                            style="background:var(--background--button1); margin-bottom: 5px;">Add Tech Related Skill</button>
+                    </div>
+
+                    <br>
+                    <ul id="projectList" class="list-group font-weight-bold text-bold" style="margin-bottom: 2rem;">
+                    </ul>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Project Title</label>
+                            <input type="text" class="form-control" id="newProjectTitle"
+                                placeholder="Enter Project Name">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+
+
+                        <div class="col-lg-1"></div>
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Technology used</label>
+                            <input type="text" class="form-control" id="newProjectTech"
+                                placeholder="Enter Comma Separated">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Project Domain</label>
+                            <input type="text" class="form-control" id="newProjectDomain"
+                                placeholder="Eg. Web or Mobile">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+
+
+                        <div class="col-lg-1"></div>
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Difficulty level</label>
+                            <input type="number" min="0" max="10" class="form-control" id="newProjectDiffLevel"
+                                placeholder="10 is most Difficult">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-block col-lg-11" type="button" id="add-project-button"
+                            onclick=addProject()
+                            style="background:var(--background--button1);margin-top: 4px; margin-bottom: 5px;">Add
+                            Project</button>
+                    </div>
+
+
+                    <br>
+
+                    <br>
+                    <ul id="tAList" class="list-group font-weight-bold text-bold" style="margin-bottom: 2rem;"></ul>
+                    <br>
+
+
+                    <label for="paragraph">Enter your all Taships:</label>
+                    <br>
+                    <label style="margin-top:1rem; font-size: smaller;" for="tAshipList">(Add multiple if done more than once even if same sub & same teacher)</label>
+                    <div class="row">
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Subject</label>
+                            <select class="form-control" id="Subject" name="Subject">
+                                <option value="ITC">Intro to Computing</option>
+                                <option value="PF">Programming Fundamentals</option>
+                                <option value="OOP">Object Oriented Programming</option>
+                                <option value="DSA">Data Structures and Algorithms</option>
+                                <option value="ALGO">Analysis of Algorithms</option>
+                                <option value="WEB">Web Engineering</option>
+                                <option value="DB">Database Systems</option>
+                            </select>
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+
+
+                        <div class="col-lg-1"></div>
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Professor Name</label>
+                            <input type="text" class="form-control" id="tAprof" name="tAprof"
+                                placeholder="Enter Professor Name">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-block col-lg-11" type="button" id="add-tAship-button" onclick=addTAship()
+                            style="background:var(--background--button1);margin-top: 4px; margin-bottom: 5px;">Add
+                            TAship</button>
+                    </div>
+
+                    <div class="row">
+                        <label for="paragraph">Enter your Interests (Comma Separated):</label>
+                        <textarea id="paragraph" name="paragraph" rows="5" cols="19"></textarea><br>
+                        <br>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <button class="btn btn-block" type="submit" id="submit"
+                        style="background:var(--background--button);">Submit</button>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+    <script>
+
+        // Get a reference to the skill list, the new skill text field, and the new skill level select menu
+        var skillList = document.getElementById("skillList");
+        var newSkill = document.getElementById("newSkill");
+        var newSkillLevel = document.getElementById("newSkillLevel");
+
+        var projList = document.getElementById("projectList");
+
+        var projectTitle = document.getElementById("newProjectTitle");
+        var projectTech = document.getElementById("newProjectTech");
+        var projDomain = document.getElementById("newProjectDomain");
+        var projDiffLevel = document.getElementById("newProjectDiffLevel");
+
+        var tAshipList = document.getElementById("tAList");
+        var subject = document.getElementById("Subject");
+        var teacherName = document.getElementById("tAprof");
+
+
+        function addTAship() {
+            var sub = subject.value;
+            var tName = teacherName.value;
+            if (sub.trim() === "" || tName.trim() === "") {
+                return;
+            }
+
+            var li = document.createElement("li");
+            li.classList.add("d-flex", "justify-content-between", "font-weight-bold");
+
+            var p = document.createElement("label");
+            p.textContent = sub;
+            p.classList.add("font-weight-bold");
+            p.style.cssText = "font-weight: bold; color: black;";
+
+            var p1 = document.createElement("label");
+            p1.textContent = tName;
+            p1.classList.add("font-weight-bold");
+            p1.style.cssText = "font-weight: bold; color: black;";
+
+            var button = document.createElement("button");
+            button.textContent = "Remove";
+
+            button.classList.add("btn", "btn-danger", "btn-sm");
+            // Add an event listener to the remove button
+            button.addEventListener("click", function () {
+                // Remove the list item from the skill list
+                tAshipList.removeChild(li);
+            });
+
+            li.appendChild(p);
+            li.appendChild(p1);
+            li.appendChild(button);
+
+            tAshipList.appendChild(li);
+
+            subject.value = "";
+            teacherName.value = "";
+
+        }
+
+        function addProject() {
+            var pName = projectTitle.value;
+            var pTech = projectTech.value;
+            var pDomain = projDomain.value;
+            var pDiff = projDiffLevel.value;
+            if (pName.trim() === "" || pTech.trim() === "" || pDomain.trim() === "" || pDiff.trim() === "") {
+                return;
+            }
+            var li = document.createElement("li");
+            li.classList.add("d-flex", "justify-content-between", "font-weight-bold");
+
+            var p = document.createElement("label");
+            p.textContent = pName;
+            p.classList.add("font-weight-bold");
+            p.style.cssText = "font-weight: bold; color: black;";
+
+            var p1 = document.createElement("label");
+            p1.textContent = pTech;
+            p1.classList.add("font-weight-bold");
+            p1.style.cssText = "font-weight: bold; color: black;";
+
+            var p2 = document.createElement("label");
+            p2.textContent = pDomain;
+            p2.classList.add("font-weight-bold");
+            p2.style.cssText = "font-weight: bold; color: black;";
+
+            var p3 = document.createElement("label");
+            p3.textContent = pDiff;
+            p3.classList.add("font-weight-bold");
+            p3.style.cssText = "font-weight: bold; color: black;";
+
+            var button = document.createElement("button");
+            button.textContent = "Remove";
+
+            button.classList.add("btn", "btn-danger", "btn-sm");
+            // Add an event listener to the remove button
+            button.addEventListener("click", function () {
+                // Remove the list item from the skill list
+                projList.removeChild(li);
+            });
+
+            li.appendChild(p);
+            li.appendChild(p1);
+            li.appendChild(p2);
+            li.appendChild(p3);
+            li.appendChild(button);
+
+            projList.appendChild(li);
+
+            projectTitle.value = "";
+            projectTech.value = "";
+            projDomain.value = "";
+            projDiffLevel.value = "";
+
+        }
+
+        // Define a function to add a new skill to the list
+        function addSkill() {
+            // Get the value of the new skill text field and the new skill level select menu
+            var skill = newSkill.value;
+            var skillLevel = newSkillLevel.value;
+            // Make sure the skill and skill level are not empty
+            if (skill.trim() === "" || skillLevel.trim() === "") {
+                return;
+            }
+
+            // Create a new list item to hold the skill and proficiency level
+            var li = document.createElement("li");
+            li.classList.add("d-flex", "justify-content-between", "font-weight-bold");
+            // Create a paragraph element to hold the skill
+            var p = document.createElement("label");
+            p.textContent = skill;
+            p.classList.add("font-weight-bold");
+            p.style.cssText = "font-weight: bold; color: black;";
+
+            var p1 = document.createElement("label");
+            p1.textContent = skillLevel;
+            p1.classList.add("font-weight-bold");
+            p1.style.cssText = "font-weight: bold; color: black;";
+            // Create a button to remove the skill from the list
+            var button = document.createElement("button");
+            button.textContent = "Remove";
+
+            button.classList.add("btn", "btn-danger", "btn-sm");
+            // Add an event listener to the remove button
+            button.addEventListener("click", function () {
+                // Remove the list item from the skill list
+                skillList.removeChild(li);
+            });
+
+            // Append the skill, proficiency level, and remove button to the list item
+            li.appendChild(p);
+            li.appendChild(p1);
+            //li.appendChild(select);
+            li.appendChild(button);
+            // Append the list item to the skill list
+            skillList.appendChild(li);
+            // Clear the new skill text field and the new skill level select menu
+            newSkill.value = "";
+            newSkillLevel.value = "0";
+
+
+        }
+        function checkCGPA() {
+            // Get the value of the CGPA input field
+            var cgpa = document.getElementById("cgpa").value;
+
+
+            // Check if the value is within the range of 1 to 4
+            if (cgpa >= 0 && cgpa <= 4) {
+                // If the value is within the range, remove any error messages
+                document.getElementById("submit").disabled = false;
+
+            } else {
+                // If the value is not within the range, display an error message
+                alert("GPA Value is not in range!")
+                document.getElementById("submit").disabled = true;
+
+            }
+        }
+    </script>
+</body>
+
+</html>
