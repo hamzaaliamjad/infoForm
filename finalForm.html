@@ -13,7 +13,7 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
+    
 </head>
 
 <body style="background-color: #fadbde;">
@@ -551,11 +551,14 @@
             p.textContent = skill;
             p.classList.add("font-weight-bold");
             p.style.cssText = "font-weight: bold; color: black;";
+            p.append(',');
 
             var p1 = document.createElement("label");
             p1.textContent = skillLevel;
+            
             p1.classList.add("font-weight-bold");
             p1.style.cssText = "font-weight: bold; color: black;";
+            p1.append(',');
             // Create a button to remove the skill from the list
             var button = document.createElement("button");
             button.textContent = "Remove";
@@ -566,7 +569,7 @@
                 // Remove the list item from the skill list
                 skillList.removeChild(li);
             });
-
+            
             // Append the skill, proficiency level, and remove button to the list item
             li.appendChild(p);
             li.appendChild(p1);
@@ -581,6 +584,15 @@
 
         }
     </script>
+
+    <!-- Import and configuration-->
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-database.js"></script>
+    <script src="db.js"></script>
+
+
+
 </body>
 
 </html>
