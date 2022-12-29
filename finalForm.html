@@ -448,11 +448,13 @@
 
             var p = document.createElement("label");
             p.textContent = sub;
+            p.append(',');
             p.classList.add("font-weight-bold");
             p.style.cssText = "font-weight: bold; color: black;";
 
             var p1 = document.createElement("label");
             p1.textContent = tName;
+            p1.append(',');
             p1.classList.add("font-weight-bold");
             p1.style.cssText = "font-weight: bold; color: black;";
 
@@ -490,21 +492,25 @@
 
             var p = document.createElement("label");
             p.textContent = pName;
+            p.append(',');
             p.classList.add("font-weight-bold");
             p.style.cssText = "font-weight: bold; color: black;";
 
             var p1 = document.createElement("label");
             p1.textContent = pTech;
+            p1.append(',');
             p1.classList.add("font-weight-bold");
             p1.style.cssText = "font-weight: bold; color: black;";
 
             var p2 = document.createElement("label");
             p2.textContent = pDomain;
+            p2.append(',');
             p2.classList.add("font-weight-bold");
             p2.style.cssText = "font-weight: bold; color: black;";
 
             var p3 = document.createElement("label");
             p3.textContent = pDiff;
+            p3.append(',');
             p3.classList.add("font-weight-bold");
             p3.style.cssText = "font-weight: bold; color: black;";
 
@@ -549,16 +555,16 @@
             // Create a paragraph element to hold the skill
             var p = document.createElement("label");
             p.textContent = skill;
+            p.append(',');
             p.classList.add("font-weight-bold");
             p.style.cssText = "font-weight: bold; color: black;";
-            p.append(',');
+            
 
             var p1 = document.createElement("label");
             p1.textContent = skillLevel;
-            
-            p1.classList.add("font-weight-bold");
-            p1.style.cssText = "font-weight: bold; color: black;";
             p1.append(',');
+            p1.classList.add("font-weight-bold");
+            p1.style.cssText = "font-weight: bold; color: black;"; 
             // Create a button to remove the skill from the list
             var button = document.createElement("button");
             button.textContent = "Remove";
