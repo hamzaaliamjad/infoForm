@@ -41,6 +41,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
     var webNum = document.getElementById("webNum").value;
     var webLabNum = document.getElementById("webLab").value;
     var gender = document.getElementById("male");
+    var interests = document.getElementById("paragraph").value;
     if(!gender.checked)
     {
         gender = document.getElementById("female");
@@ -63,25 +64,39 @@ document.getElementById("form").addEventListener("submit", function(event) {
         }
     }
 
-    var skillList = document.getElementById("skillList");
-    var skills = skillList.getElementsByTagName("li");
-    var skill; 
+    var skillUL = document.getElementById("skillList");
+    var skills = skillUL.getElementsByTagName("li");
+    let skillList = []; 
     // Loop through the list of skills
     for (var i = 0; i < skills.length; i++) {
-        // Get the current item
-        //const arr = skills[i].textContent.split(',');
-        //skill.push(arr[0]);
-        skill = skills[i];
-   
-        // Do something with the item (e.g. read its text content)
-    console.log(skill.textContent.split(' '));
+        const arr = skills[i].textContent.split(',');
+        var str = arr[0]+','+arr[1];
+        //Make the list of string of skills
+        skillList.push(str);
     }
-    var newSkill = document.getElementById("newSkill").value;
-    var newSkillLevel = document.getElementById("newSkillLevel").value;
 
-    console.log("hy");
-    console.log(rollNo);
-
+    var projectUL = document.getElementById("projectList");
+    var projects = projectUL.getElementsByTagName("li");
+    let projectList = []; 
+    // Loop through the list of skills
+    for (var i = 0; i < projects.length; i++) {
+        const arr = projects[i].textContent.split(',');
+        var str = arr[0] + ',' + arr[1] + ',' + arr[2] + ',' + arr[3];
+        //Make the list of string of skills
+        projectList.push(str);
+    }
+    
+    var taUL = document.getElementById("tAList");
+    var taShips = taUL.getElementsByTagName("li");
+    let taList = []; 
+    // Loop through the list of skills
+    for (var i = 0; i < taShips.length; i++) {
+        const arr = taShips[i].textContent.split(',');
+        var str = arr[0] + ',' + arr[1];
+        //Make the list of string of skills
+        taList.push(str);
+    }
+    
     const newPostRef = database.ref('student').push({
         name: studName,
         rollNo: rollNo,
@@ -104,10 +119,15 @@ document.getElementById("form").addEventListener("submit", function(event) {
         webLabNum: webLabNum,
         gender: gender.value,
         degree: degree.value,
-        skill: skill.textContent.split(',')
+        skills: skillList,
+        projects: projectList,
+        taShips: taList,
+        interests: interests
     });
 
-    
+   
+
+
 
 });
 
