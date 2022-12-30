@@ -78,23 +78,34 @@ document.getElementById("form").addEventListener("submit", function(event) {
     var projectUL = document.getElementById("projectList");
     var projects = projectUL.getElementsByTagName("li");
     let projectList = []; 
-    // Loop through the list of skills
+    // Loop through the list of project
     for (var i = 0; i < projects.length; i++) {
         const arr = projects[i].textContent.split(',');
         var str = arr[0] + ',' + arr[1] + ',' + arr[2] + ',' + arr[3];
-        //Make the list of string of skills
+        //Make the list of string of projects
         projectList.push(str);
     }
     
     var taUL = document.getElementById("tAList");
     var taShips = taUL.getElementsByTagName("li");
     let taList = []; 
-    // Loop through the list of skills
+    // Loop through the list of taShip
     for (var i = 0; i < taShips.length; i++) {
         const arr = taShips[i].textContent.split(',');
         var str = arr[0] + ',' + arr[1];
-        //Make the list of string of skills
+        //Make the list of string of taShip
         taList.push(str);
+    }
+
+    var internUL = document.getElementById("internShipList");
+    var internShips = internUL.getElementsByTagName("li");
+    let internShipList = []; 
+    // Loop through the list of internShips
+    for (var i = 0; i < internShips.length; i++) {
+        const arr = internShips[i].textContent.split(',');
+        var str = arr[0] + ',' + arr[1];
+        //Make the list of string of internShip
+        internShipList.push(str);
     }
     
     const newPostRef = database.ref('student').push({
@@ -122,6 +133,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
         skills: skillList,
         projects: projectList,
         taShips: taList,
+        internShips: internShipList,
         interests: interests
     });
 
