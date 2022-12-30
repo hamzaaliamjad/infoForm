@@ -13,7 +13,7 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    
+
 </head>
 
 <body style="background-color: #fadbde;">
@@ -40,7 +40,9 @@
             <div class="card justify-content-center" style="background-color: transparent; border: none;">
                 <div class="container" style="background-color: transparent;">
                     <div class="card-body" style="background:var(--background--form);">
-                        <form id="form" action="/signupHandle" method="post" onsubmit="window.location='thanks.html';return false;" style="background-color: transparent;">
+                        <form id="form" action="/signupHandle" method="post"
+                            onsubmit="window.location='thanks.html';return false;"
+                            style="background-color: transparent;">
                             <div class="form-group"><!--action="/signupHandle"  method="post"-->
                                 <div class="row">
                                     <div class="col-lg-5">
@@ -120,22 +122,22 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="matric" style="margin-top:1rem;">Matric Percentage</label>
-                                    <input type="number" min="0" max="100" step="0.01" class="form-control" id="matricNum"
-                                        name="matric" placeholder="Enter Your Matric %" required>
+                                    <input type="number" min="0" max="100" step="0.01" class="form-control"
+                                        id="matricNum" name="matric" placeholder="Enter Your Matric %" required>
                                 </div>
 
                                 <div class="col-lg-1"></div>
 
                                 <div class="col-lg-5">
                                     <label for="inter" style="margin-top:1rem;">Inter Percentage</label>
-                                    <input type="number" min="0" max="100" step="0.01"class="form-control" id="interNum"
-                                        name="inter" placeholder="Enter Your Inter %" required>
+                                    <input type="number" min="0" max="100" step="0.01" class="form-control"
+                                        id="interNum" name="inter" placeholder="Enter Your Inter %" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="itc" style="margin-top:1rem;">Intro to Computing</label>
-                                    <input type="number" min="0" max="100"  class="form-control" id="itcNum" name="itc"
+                                    <input type="number" min="0" max="100" class="form-control" id="itcNum" name="itc"
                                         placeholder="Marks out of 100">
                                 </div>
 
@@ -144,14 +146,14 @@
                                 <div class="col-lg-5">
                                     <label for="pf" style="margin-top:1rem; font-size: smaller;">Programming
                                         Fundamentals</label>
-                                    <input type="number" min="0" max="100"  class="form-control" id="pfNum" name="pf"
+                                    <input type="number" min="0" max="100" class="form-control" id="pfNum" name="pf"
                                         placeholder="Marks out of 100">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="pfLab" style="margin-top:1rem;">PF Lab</label>
-                                    <input type="number" min="0" max="100"   class="form-control" id="pfLabNum"
+                                    <input type="number" min="0" max="100" class="form-control" id="pfLabNum"
                                         name="pfLab" placeholder="Marks out of 100">
                                 </div>
 
@@ -160,7 +162,7 @@
                                 <div class="col-lg-5">
                                     <label for="oop" style="margin-top:1rem; font-size: smaller;">Object Oriented
                                         Prog</label>
-                                    <input type="number" min="0" max="100"  class="form-control" id="oopNum" name="oop"
+                                    <input type="number" min="0" max="100" class="form-control" id="oopNum" name="oop"
                                         placeholder="Marks out of 100">
                                 </div>
                             </div>
@@ -168,7 +170,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="oopLab" style="margin-top:1rem;">OOP Lab</label>
-                                    <input type="number" min="0" max="100"   class="form-control" id="oopLabNum"
+                                    <input type="number" min="0" max="100" class="form-control" id="oopLabNum"
                                         name="oopLab" placeholder="Marks out of 100">
                                 </div>
 
@@ -177,14 +179,14 @@
                                 <div class="col-lg-5">
                                     <label for="dsa" style="margin-top:1rem; font-size: smaller;">Data Structures
                                         (DSA)</label>
-                                    <input type="number" min="0" max="100"  class="form-control" id="dsaNum" name="dsa"
+                                    <input type="number" min="0" max="100" class="form-control" id="dsaNum" name="dsa"
                                         placeholder="Marks out of 100">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="dsaLAB" style="margin-top:1rem;">DSA Lab</label>
-                                    <input type="number" min="0" max="100"  class="form-control" id="dsaLabNum"
+                                    <input type="number" min="0" max="100" class="form-control" id="dsaLabNum"
                                         name="dsaLab" placeholder="Marks out of 100">
                                 </div>
 
@@ -192,7 +194,7 @@
 
                                 <div class="col-lg-5">
                                     <label for="algo" style="margin-top:1rem;">Analysis of Algorithms</label>
-                                    <input type="number" min="0" max="100"   class="form-control" id="algoNum" name="algo"
+                                    <input type="number" min="0" max="100" class="form-control" id="algoNum" name="algo"
                                         placeholder="Marks out of 100">
                                 </div>
                             </div>
@@ -200,7 +202,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="db" style="margin-top:1rem;">DataBase Systems</label>
-                                    <input type="number" min="0" max="100"  class="form-control" id="dbNum" name="db"
+                                    <input type="number" min="0" max="100" class="form-control" id="dbNum" name="db"
                                         placeholder="Marks out of 100">
                                 </div>
 
@@ -208,7 +210,7 @@
 
                                 <div class="col-lg-5">
                                     <label for="dbLab" style="margin-top:1rem;">DBS Lab</label>
-                                    <input type="number" min="0" max="100"   class="form-control" id="dbLab" name="dbLab"
+                                    <input type="number" min="0" max="100" class="form-control" id="dbLab" name="dbLab"
                                         placeholder="Marks out of 100">
                                 </div>
                             </div>
@@ -216,7 +218,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <label for="web" style="margin-top:1rem;">Web Engineering</label>
-                                    <input type="number" min="0" max="100"   class="form-control" id="webNum" name="web"
+                                    <input type="number" min="0" max="100" class="form-control" id="webNum" name="web"
                                         placeholder="Marks out of 100">
                                 </div>
 
@@ -224,7 +226,7 @@
 
                                 <div class="col-lg-5">
                                     <label for="webLab" style="margin-top:1rem;">WEB Lab</label>
-                                    <input type="number" min="0" max="100"   class="form-control" id="webLab"
+                                    <input type="number" min="0" max="100" class="form-control" id="webLab"
                                         name="webLab" placeholder="Marks out of 100">
                                 </div>
                             </div>
@@ -288,7 +290,8 @@
                     <br>
                     <div class="row">
                         <button class="btn btn-block col-lg-11" type="button" id="add-skill-button" onclick=addSkill()
-                            style="background:var(--background--button1); margin-bottom: 5px;">Add Tech Related Skill</button>
+                            style="background:var(--background--button1); margin-bottom: 5px;">Add Tech Related
+                            Skill</button>
                     </div>
 
                     <br>
@@ -311,7 +314,8 @@
 
                         <div class="col-lg-5">
                             <!-- Add a text field for the user to enter a new skill -->
-                            <label for="diff" style="margin-top:1rem; font-size: smaller;">Technology used (-) Separated</label>
+                            <label for="diff" style="margin-top:1rem; font-size: smaller;">Technology used (-)
+                                Separated</label>
                             <input type="text" class="form-control" id="newProjectTech"
                                 placeholder="eg.(C++ - html - java)">
                             <!-- Add a select menu for the proficiency level of the new skill -->
@@ -356,7 +360,8 @@
 
                     <label for="paragraph">Enter your all Taships:</label>
                     <br>
-                    <label style="margin-top:1rem; font-size: smaller;" for="tAshipList">(Add multiple if done more than once even if same sub & same teacher)</label>
+                    <label style="margin-top:1rem; font-size: smaller;" for="tAshipList">(Add multiple if done more than
+                        once even if same sub & same teacher)</label>
                     <div class="row">
 
                         <div class="col-lg-5">
@@ -389,6 +394,63 @@
                         <button class="btn btn-block col-lg-11" type="button" id="add-tAship-button" onclick=addTAship()
                             style="background:var(--background--button1);margin-top: 4px; margin-bottom: 5px;">Add
                             TAship</button>
+                    </div>
+
+
+                    <br>
+                    <ul id="internShipList" class="list-group font-weight-bold text-bold" style="margin-bottom: 2rem;">
+                    </ul>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Company Title</label>
+                            <input type="text" class="form-control" id="CompanyTitle"
+                                placeholder="Enter Companys' Name">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+
+
+                        <div class="col-lg-1"></div>
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem; font-size: smaller;">Technology used (-)
+                                Separated</label>
+                            <input type="text" class="form-control" id="internshipTech"
+                                placeholder="eg.(C++ - html - java)">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Internship Domain</label>
+                            <input type="text" class="form-control" id="internshipDomain"
+                                placeholder="Eg. Web or Mobile">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+
+
+                        <div class="col-lg-1"></div>
+
+                        <div class="col-lg-5">
+                            <!-- Add a text field for the user to enter a new skill -->
+                            <label for="diff" style="margin-top:1rem;">Tenure(No. of Months)</label>
+                            <input type="number" class="form-control" id="internshipTenure"
+                                placeholder="Enter Number of months">
+                            <!-- Add a select menu for the proficiency level of the new skill -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-block col-lg-11" type="button" id="add-internship-button"
+                            onclick=addInternship()
+                            style="background:var(--background--button1);margin-top: 4px; margin-bottom: 5px;">Add
+                            Intership</button>
                     </div>
 
                     <div class="row">
@@ -434,6 +496,77 @@
         var tAshipList = document.getElementById("tAList");
         var subject = document.getElementById("Subject");
         var teacherName = document.getElementById("tAprof");
+
+
+        var internShipList = document.getElementById("internShipList");
+        var internShipCompanyName = document.getElementById("CompanyTitle");
+        var internShipTech = document.getElementById("internshipTech");
+        var internShipDomain = document.getElementById("internshipDomain");
+        var internTenure = document.getElementById("internshipTenure");
+
+
+        function addInternship() {
+            var cName = internShipCompanyName.value;
+            var iTech = internShipTech.value;
+            var iDomain = internShipDomain.value;
+            var iTenure = internTenure.value;
+
+            if (cName.trim() === "" || iTech.trim() === "" || iDomain.trim() === "") {
+                return;
+            }
+
+
+            var li = document.createElement("li");
+            li.classList.add("d-flex", "justify-content-between", "font-weight-bold");
+
+            var p = document.createElement("label");
+            p.textContent = cName;
+            p.append(',');
+            p.classList.add("font-weight-bold");
+            p.style.cssText = "font-weight: bold; color: black;";
+
+            var p1 = document.createElement("label");
+            p1.textContent = iTech;
+            p1.append(',');
+            p1.classList.add("font-weight-bold");
+            p1.style.cssText = "font-weight: bold; color: black;";
+
+            var p2 = document.createElement("label");
+            p2.textContent = iDomain;
+            p2.append(',');
+            p2.classList.add("font-weight-bold");
+            p2.style.cssText = "font-weight: bold; color: black;";
+
+            var p3 = document.createElement("label");
+            p3.textContent = iTenure;
+            p3.append(',');
+            p3.classList.add("font-weight-bold");
+            p3.style.cssText = "font-weight: bold; color: black;";
+
+            var button = document.createElement("button");
+            button.textContent = "Remove";
+
+            button.classList.add("btn", "btn-danger", "btn-sm");
+            // Add an event listener to the remove button
+            button.addEventListener("click", function () {
+                // Remove the list item from the skill list
+                internShipList.removeChild(li);
+            });
+
+            li.appendChild(p);
+            li.appendChild(p1);
+            li.appendChild(p2);
+            li.appendChild(p3);
+
+            li.appendChild(button);
+
+            internShipList.appendChild(li);
+
+            internShipCompanyName.value = "";
+            internShipDomain.value = "";
+            internShipTech.value = "";
+            internTenure.value = 0;
+        }
 
 
         function addTAship() {
@@ -558,13 +691,13 @@
             p.append(',');
             p.classList.add("font-weight-bold");
             p.style.cssText = "font-weight: bold; color: black;";
-            
+
 
             var p1 = document.createElement("label");
             p1.textContent = skillLevel;
             p1.append(',');
             p1.classList.add("font-weight-bold");
-            p1.style.cssText = "font-weight: bold; color: black;"; 
+            p1.style.cssText = "font-weight: bold; color: black;";
             // Create a button to remove the skill from the list
             var button = document.createElement("button");
             button.textContent = "Remove";
@@ -575,7 +708,7 @@
                 // Remove the list item from the skill list
                 skillList.removeChild(li);
             });
-            
+
             // Append the skill, proficiency level, and remove button to the list item
             li.appendChild(p);
             li.appendChild(p1);
